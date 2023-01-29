@@ -12,7 +12,7 @@ const links = [
     },
     {
       name:"Important task",
-      path:'important'
+      path:'/important'
     },
     {
         name: "Completed tasks",
