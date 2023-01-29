@@ -24,18 +24,21 @@ const links = [
     },
 ]
 const NavLinks = ({classActive}) => {
-  const currentPath = "/today";
+  const route = useLocation();
+  const currentPath = route.pathname;
   return (
     <nav>
         <ul className='grid gap-2'>
             {links.map((link) => (
-                <p
+              <li key={link.path}>
+                <NavLink
                 className={`px-4 py-2 w-full block transition hover:text-rose-600 dark:hover:text-slate-200 
                 ${currentPath === link.path ? classActive : ''}`}
-                key={link.path}
+                to={link.path}
                 >
                     {link.name}
-                </p>
+                </NavLink>
+              </li>
             ))}
         </ul>
     </nav>
