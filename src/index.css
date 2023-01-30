@@ -2,15 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
-    @apply bg-violet-600 hover:bg-violet-700 py-3 px-6 text-slate-50 rounded-lg w-auto transition dark:bg-violet-800 dark:hover:bg-violet-900;
-  }
 .inputStyles {
-    @apply bg-slate-100 text-slate-600 dark:text-slate-200 rounded-lg p-3 outline-transparent border-2 border-transparent hover:border-violet-600 focus:border-violet-600 focus:outline-none transition dark:bg-slate-800;
-  }
+  @apply bg-slate-100 text-slate-600 dark:text-slate-200 rounded-lg p-3 outline-transparent border-2 border-transparent hover:border-violet-600 focus:border-violet-600 focus:outline-none transition dark:bg-slate-800;
+}
+
+.btn {
+  @apply bg-violet-600 hover:bg-violet-700 py-3 px-6 text-slate-50 rounded-lg w-auto transition dark:bg-violet-800 dark:hover:bg-violet-900;
+}
+
 .btn:active {
   @apply scale-95;
 }
+
 @layer components {
   .tasksList > li:first-of-type article {
     @apply bg-violet-600 text-slate-100 dark:bg-violet-800;
@@ -60,6 +63,7 @@
     @apply opacity-100;
   }
 }
+
 /* clears the 'X' from Internet Explorer */
 input[type="search"]::-ms-clear {
   display: none;

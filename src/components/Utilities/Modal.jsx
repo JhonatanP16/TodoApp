@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ReactDOM from "react-dom";
 const ModalContent = ({children,onClose,title}) =>{
     const closeModalHandler = (e) =>{
         if(e.target === e.currentTarget){
@@ -26,9 +26,11 @@ const ModalContent = ({children,onClose,title}) =>{
     )
 }
 
+const modalElement = document.getElementById('modal');
 const Modal = ({children,onClose,title}) => {
-  return (
-    <ModalContent children={children} onClose={onClose} title={title}/>
+  return  ReactDOM.createPortal(
+    <ModalContent children={children} onClose={onClose} title={title}/>,
+    modalElement
   )
 }
 
