@@ -2,6 +2,8 @@ import Menu from "./components/Menu/Menu"
 import ModalCreateTask from "./components/Utilities/ModalTask"
 import { useSelector,useDispatch } from "react-redux"
 import { modalActions } from "./store/Modal.store";
+import TasksSection from "./components/TasksSection/TasksSection";
+import AccountData from "./components/AccountSection/AccountData";
 function App() {
   const modal = useSelector((state) =>state.modal);
   const dispatch = useDispatch();
@@ -17,6 +19,8 @@ function App() {
         />
       )}
       <Menu/>
+      <TasksSection/>
+      <AccountData/>
     </div>  
   )
 }
