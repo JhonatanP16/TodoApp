@@ -6,7 +6,7 @@ import ModalDirectory from '../../Utilities/ModalDirectory';
 import { FaEdit, FaTrash} from "react-icons/fa";
 import ModalConfirm from '../../Utilities/ModalConfirm';
 const ItemDirectory = ({classActive,dir}) => {
-    console.log(dir);
+   
     const route = useLocation();
     const currentPath = route.pathname;
     const dispatch = useDispatch();

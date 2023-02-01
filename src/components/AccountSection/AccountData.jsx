@@ -1,9 +1,19 @@
 import React from 'react'
 import LayoutMenus from '../Utilities/LayoutMenus'
 import Avatar from '../../assets/avatar.jpg'
+import { useDispatch, useSelector } from 'react-redux'
+import { menusActions } from '../../store/Menu.store'
 const AccountData = () => {
+  const menuOpen = useSelector((state) => state.menu.menuAccountOpened);
+  const dispatch = useDispatch();
+
+  const closeMenuHandler = () =>{
+    dispatch(menusActions.closeMenuAccount());
+  }
   return (
     <LayoutMenus
+    menuOpen={menuOpen}
+    closeMenuHandler={closeMenuHandler}
     className="top-0 right-0"
     >
         <section className='p-5 flex flex-col h-full'>

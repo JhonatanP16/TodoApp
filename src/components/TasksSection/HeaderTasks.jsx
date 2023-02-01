@@ -60,7 +60,7 @@ const HeaderTasks = () => {
                 <img 
                 src={Avatar}
                 alt="Avatar"
-                className='rounded-full ml-4w-10 h-10'/>
+                className='rounded-full ml-4 w-10 h-10'/>
             </button>
         </div>
     </header>
