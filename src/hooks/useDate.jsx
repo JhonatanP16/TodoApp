@@ -1,4 +1,4 @@
-const useDate = () => {
+const useDate = (date) => {
   const fullDate = new Date(date.replaceAll("-", "/"));
   const year = fullDate.getFullYear();
   const month = fullDate.getMonth() + 1;
