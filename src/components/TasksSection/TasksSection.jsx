@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import DoneTasks from '../../routes/DoneTasks'
 import Home from '../../routes/Home'
 import ImportantTask from '../../routes/ImportantTask'
+import TaskOnly from '../../routes/TaskOnly'
 import TodaysTasks from '../../routes/TodaysTasks'
 import HeaderTasks from './HeaderTasks'
 
@@ -17,6 +18,7 @@ const TasksSection = () => {
             <Route path='/important' element={<ImportantTask/>}/>
             <Route path='/completed'  element={<DoneTasks done={true} title='Completed Task'/>}/>
             <Route path='/uncompleted'  element={<DoneTasks done={false} title='Uncompleted Task'/>}/>
+            <Route path='/task/:taskId'  element={<TaskOnly/>}/>
         </Routes>
     </main>
   )
