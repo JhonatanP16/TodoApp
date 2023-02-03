@@ -94,7 +94,7 @@ const tasksSlice = createSlice({
             const currTask = state.tasks.find((task) => task.id === taskId);
             currTask.completed = !currTask.completed;
         },
-        deleteAllData(state,action){
+        deleteAllData(state){
             state.tasks = [];
             state.directories = ["Main"];
         },
