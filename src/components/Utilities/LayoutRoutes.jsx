@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { modalActions } from '../../store/Modal.store';
 import ButtonsSort from '../TasksSection/ButtonsSort';
 import TaskItem from '../TasksSection/TaskItem/TaskItem';
-
+import useSortTask from '../../hooks/useSortTask'
 
 const LayoutRoutes = ({title,tasks}) => {
     const [isListInView1, setIsListInView1] = useState(false);
@@ -12,7 +12,7 @@ const LayoutRoutes = ({title,tasks}) => {
         dispatch(modalActions.openModalCreateTask())
     }
     const taskTitle = `${title} (${tasks.length} ${tasks.length === 1 ? 'task' :'tasks'})`
-   
+    const { sortedBy, setSortedBy, sortedTasks } = useSortTask(tasks);
   return (
     <section>
         <h1 className='font-medium my-5 text-center sm:text-left sm:my-8 md:text-2xl text-lg dark:text-slate-200'>
@@ -21,6 +21,8 @@ const LayoutRoutes = ({title,tasks}) => {
         <ButtonsSort
         isListInView1={isListInView1}
         setIsListInView1={setIsListInView1}
+        sortedBy={sortedBy}
+        setSortedBy={setSortedBy}
         />
 
         <ul
@@ -30,7 +32,7 @@ const LayoutRoutes = ({title,tasks}) => {
             : '2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 items-end'
         }`} 
         >
-           {tasks.map(task => (
+           {sortedTasks.map(task => (
             <TaskItem key={task.id} isListInView1={isListInView1} task={task}/>
              )
            )}

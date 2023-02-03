@@ -16,6 +16,23 @@ const ButtonsSort = ({isListInView1,setIsListInView1,sortedBy,setSortedBy}) => {
         <button onClick={()=> setIsListInView1(false)} title='view in grid'>
             <FaThLarge className={!isListInView1 ? 'text-violet-600' : ''}/>
         </button>
+        <select
+        className="ml-auto inputStyles"
+        value={sortedBy}
+        onChange={({target})=>setSortedBy(target.value)}
+        >
+            <option value="" disabled>
+                Sort By
+            </option>
+            {sortValues.map((val) =>(
+                <option 
+                value={val.value} 
+                key={val.value}
+                className="bg-slate-100 dark:bg-slate-800">
+                    {val.title}
+                </option>
+            ))}
+        </select>
     </div>
   )
 }
